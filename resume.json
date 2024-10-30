@@ -1,0 +1,171 @@
+{
+  "basics": {
+    "name": "Hau Tran",
+    "picture": "",
+    "label": "Frontend Developer",
+    "headline": "",
+    "summary": "Hey, I am Hau Tran, a front-end developer passionate about web development. I enjoy creating things that live on the internet from start to finish and take great care in the experience, and code quality of the things I build. Outside of programming, I enjoy doing photography and traveling.",
+    "website": "",
+    "address": "",
+    "projects_url": "",
+    "username": "dauphaihau",
+    "email": "dauphaihau@gmail.com",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/dauphaihau",
+        "username": "dauphaihau"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/dauphaihau",
+        "username": "dauphaihau"
+      },
+      {
+        "network": "Twitter",
+        "url": "https://twitter.com/dauphaihau",
+        "username": "dauphaihau"
+      },
+      {
+        "network": "Portfolio",
+        "url": "https://hautran.me",
+        "username": "hautran.me"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "keywords": [
+        "TypeScript",
+        "TanStack Query",
+        "Vue",
+        "Nuxt",
+        "React",
+        "Next",
+        "Tailwind CSS",
+        "Sass"
+      ],
+      "level": "Junior",
+      "name": "Frontend"
+    },
+    {
+      "keywords": [
+        "Node",
+        "Express",
+        "MongoDB",
+        "MySQL",
+        "Stripe",
+        "Prisma",
+        "Docker"
+      ],
+      "level": "",
+      "name": "Backend"
+    },
+    {
+      "keywords": [],
+      "level": "",
+      "name": "Mobile"
+    },
+    {
+      "keywords": [
+        "AWS"
+      ],
+      "level": "",
+      "name": "DevOps"
+    },
+    {
+      "keywords": [
+        "Javascript"
+      ],
+      "level": "",
+      "name": "Languages"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Arc",
+      "summary": "An e-commerce marketplace web application where people come together to make, sell, buy, and collect unique items",
+      "technologies": "TypeScript, TanStack Query, Nuxt.js, Pinia, Tailwind CSS, Express.js, MongoDB",
+      "mainTechnologies": [
+        "Nuxt.js",
+        "TypeScript",
+        "Express.js",
+        "MongoDB"
+      ],
+      "website": "https://arc-market.vercel.app",
+      "source": "https://github.com/dauphaihau/arc"
+    },
+    {
+      "name": "Meepo",
+      "summary": "A free social networking site where people converse with each other in short messages",
+      "technologies": "TypeScript, TanStack Query, Vue, Tailwind CSS, Ruby on Rails, PostgreSQL, Redis",
+      "mainTechnologies": [
+        "Vue.js",
+        "TypeScript",
+        "Ruby on Rails",
+        "PostgreSQL"
+      ],
+      "website": "https://meepo-social.vercel.app",
+      "source": "https://github.com/dauphaihau/meepo"
+    },
+    {
+      "name": "Camille",
+      "summary": "A note-taking web application where you can think, write, and plan",
+      "technologies": "Next.js, TypeScript, Tanstack Query, Tailwind CSS, Zustand, MySQL, Stripe",
+      "mainTechnologies": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "MySQL"
+      ],
+      "website": "https://camillee.vercel.app",
+      "source": "https://github.com/dauphaihau/camille"
+    }
+  ],
+  "work": [
+    {
+      "company": "South Telecom",
+      "position": "Frontend Developer Fresher",
+      "website": "https://southtelecom.vn",
+      "location": "Full-time",
+      "isCurrentRole": false,
+      "startDate": "Apr 2022",
+      "endDate": "Sep 2023",
+      "highlights": [
+        "Develop new user-facing features, build reusable code for future use, ensure the technical feasibility of UI/UX designs, and optimize applications for maximum speed and scalability.",
+        "Communicating with BA/PO to clarify the user requirements",
+        "Work closely with designers and back-end developers to ensure that the UI, features meet the requirements.",
+        "Write unit tests",
+        "Maintained and debugged projects are released on the production environment."
+      ]
+    },
+    {
+      "company": "Edoctor",
+      "position": "Frontend Developer Intern",
+      "website": "https://edoctor.io/",
+      "location": "",
+      "isCurrentRole": false,
+      "startDate": "Feb 2022",
+      "endDate": "Apr 2022",
+      "highlights": [
+        "Worked closely with the team to translate design mock-ups into elegant, fast, responsive websites, web applications. "
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Cybersoft Academy",
+      "courses": [
+        "Professional Frontend programming",
+        "Backend - NodeJS Foundation - Writing REST APIs"
+      ],
+      "certifications": [
+        "Front End Website Developer",
+        "Back End Nodejs Developer"
+      ],
+      "startDate": "Mar 2021",
+      "endDate": "Feb 2021"
+    }
+  ]
+}
+

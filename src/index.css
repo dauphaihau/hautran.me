@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: #fff;
+  --c-scrollbar: #eee;
+
+  --c-light: #888;
+  --c: #555;
+  --c-deep: #222;
+  --c-deeper: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #0e0e0e;
+    --c-scrollbar: #111;
+
+    --c-light: #888;
+    --c: #bbb;
+    --c-deep: #ddd;
+    --c-deeper: #fff;
+  }
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+* {
+  scrollbar-color: var(--c-scrollbar) var(--c-bg);
+}
+
+body {
+  font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  background-color: var(--c-bg);
+  color: var(--c);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+::selection {
+  background: #8884;
+}
+
+a {
+  @apply font-medium hover:text-blue-500
+  underline underline-offset-[5px]
+  decoration-dashed decoration-1 decoration-zinc-500/50 hover:decoration-blue-500
+}
+
+.card-wrapper {
+  padding: 5px;
+}
+
+.card {
+  @apply p-4 lg:py-[2em] lg:px-[3.5em]
+}
