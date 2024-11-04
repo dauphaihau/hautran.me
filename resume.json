@@ -138,33 +138,17 @@
         "Write unit tests",
         "Maintained and debugged projects are released on the production environment."
       ]
-    },
-    {
-      "company": "Edoctor",
-      "position": "Frontend Developer Intern",
-      "website": "https://edoctor.io/",
-      "location": "",
-      "isCurrentRole": false,
-      "startDate": "Feb 2022",
-      "endDate": "Apr 2022",
-      "highlights": [
-        "Worked closely with the team to translate design mock-ups into elegant, fast, responsive websites, web applications. "
-      ]
     }
   ],
   "education": [
     {
-      "institution": "Cybersoft Academy",
-      "courses": [
-        "Professional Frontend programming",
-        "Backend - NodeJS Foundation - Writing REST APIs"
-      ],
+      "institution": "Cybersoft Academy, Viet Nam",
       "certifications": [
-        "Front End Website Developer",
-        "Back End Nodejs Developer"
+        "Professional Front-end Developer",
+        "Back-end NodeJS Developer"
       ],
       "startDate": "Mar 2021",
-      "endDate": "Feb 2021"
+      "endDate": "Feb 2022"
     }
   ]
 }

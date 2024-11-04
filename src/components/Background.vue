@@ -17,7 +17,7 @@ import { toIcon } from '../utils/toIcon';
 
         <div class="wrapper">
           <div class="title">Projects</div>
-          <div class="content grid grid-cols-2 gap-8">
+          <div class="content grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
                 v-for="(project, idx) of resume.projects"
                 :key="idx"
@@ -75,7 +75,7 @@ import { toIcon } from '../utils/toIcon';
                 </div>
                 <div class="text-sm font-medium text-primary-light">{{ item.position }}</div>
                 <div v-for="highlight in item.highlights" :key="highlight">
-                  <div class="flex items-center ml-3 gap-1.5">
+                  <div class="flex items-center md:ml-3 gap-1.5">
                     <div>
                       <Icon :icon="toIcon('whiteDot')" class="size-7"/>
                     </div>
@@ -116,7 +116,7 @@ import { toIcon } from '../utils/toIcon';
                     <div class="">{{ item.endDate }}</div>
                   </div>
                 </div>
-                <p class="font-medium">Certifications: </p>
+<!--                <p class="font-medium">Certifications: </p>-->
                 <div v-for="cert in item.certifications" :key="cert">
                   <div class="flex items-center ml-3">
                     <div>
