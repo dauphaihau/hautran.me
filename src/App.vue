@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Profile from './components/Profile.vue';
-import Background from './components/Background.vue';
+import Background from './components/background/Background.vue';
 import resume from '../resume.json';
 </script>
 

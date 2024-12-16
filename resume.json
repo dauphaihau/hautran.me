@@ -4,12 +4,12 @@
     "picture": "",
     "label": "Frontend Developer",
     "headline": "",
-    "summary": "Hey, I am Hau Tran, a front-end developer passionate about web development. I enjoy creating things that live on the internet from start to finish and take great care in the experience, and code quality of the things I build. Outside of programming, I enjoy doing photography and traveling.",
+    "summary": "Hey, I am Hau Tran, a frontend developer passionate about web development. I enjoy creating things that live on the internet from start to finish and take great care in the experience, and code quality of the things I build. Outside of programming, I enjoy doing photography and traveling.",
     "website": "",
     "address": "",
     "projects_url": "",
     "username": "dauphaihau",
-    "email": "dauphaihau@gmail.com",
+    "email": "hi@hautran.me",
     "profiles": [
       {
         "network": "GitHub",
@@ -25,60 +25,78 @@
         "network": "Twitter",
         "url": "https://twitter.com/dauphaihau",
         "username": "dauphaihau"
-      },
-      {
-        "network": "Portfolio",
-        "url": "https://hautran.me",
-        "username": "hautran.me"
       }
     ]
   },
   "skills": [
     {
       "keywords": [
-        "TypeScript",
-        "TanStack Query",
+        "Javascript",
+        "Typescript"
+      ],
+      "level": "",
+      "name": "Programming languages"
+    },
+    {
+      "keywords": [
+        "HTML",
+        "CSS",
         "Vue",
         "Nuxt",
         "React",
         "Next",
         "Tailwind CSS",
-        "Sass"
+        "Sass",
+        "TanStack Query"
       ],
       "level": "Junior",
-      "name": "Frontend"
+      "name": "Web Development"
     },
     {
       "keywords": [
         "Node",
         "Express",
-        "MongoDB",
-        "MySQL",
         "Stripe",
         "Prisma",
-        "Docker"
+        "MySQL",
+        "MongoDB"
       ],
       "level": "",
-      "name": "Backend"
+      "name": "Backend Development"
     },
     {
       "keywords": [],
       "level": "",
-      "name": "Mobile"
+      "name": "Mobile Development"
     },
     {
       "keywords": [
-        "AWS"
+        "AWS",
+        "Vercel"
       ],
       "level": "",
-      "name": "DevOps"
+      "name": "Cloud infrastructure"
     },
     {
       "keywords": [
-        "Javascript"
+        "Git",
+        "GitHub",
+        "Gitlab",
+        "Jira",
+        "Figma",
+        "Postman",
+        "Docker"
       ],
       "level": "",
-      "name": "Languages"
+      "name": "Misc Tools"
+    },
+    {
+      "keywords": [
+        "RESTful API",
+        "Agile"
+      ],
+      "level": "",
+      "name": "Others"
     }
   ],
   "projects": [
@@ -132,11 +150,10 @@
       "startDate": "Apr 2022",
       "endDate": "Sep 2023",
       "highlights": [
-        "Develop new user-facing features, build reusable code for future use, ensure the technical feasibility of UI/UX designs, and optimize applications for maximum speed and scalability.",
-        "Communicating with BA/PO to clarify the user requirements",
-        "Work closely with designers and back-end developers to ensure that the UI, features meet the requirements.",
-        "Write unit tests",
-        "Maintained and debugged projects are released on the production environment."
+        "Develop user-facing features and reusable code, ensuring UI/UX designs are feasible and optimized for performance and scalability",
+        "Collaborate with BAs, POs, designers, and back-end developers to align on requirements and implementation",
+        "Write unit tests for quality assurance.",
+        "Maintain, debug, and support project releases in production"
       ]
     }
   ],

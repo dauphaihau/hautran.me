@@ -6,11 +6,11 @@ import { toIcon, IconKey } from '../utils/toIcon.ts';
 
 <template>
   <section>
-    <div class="wrapper-card">
+    <div class="sticky top-0">
       <div class="card text-left">
         <div>
           <h3 class="text-3xl font-bold text-primary-deeper">{{ resume.basics.name }}</h3>
-          <div class="text-primary-light">{{ resume.basics.label }}</div>
+          <div class="text-primary-light text-nowrap">{{ resume.basics.label }}</div>
         </div>
         <div class="leading-loose mt-2">
           <a

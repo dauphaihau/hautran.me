@@ -55,10 +55,6 @@ a {
   decoration-dashed decoration-1 decoration-zinc-500/50 hover:decoration-blue-500
 }
 
-.card-wrapper {
-  padding: 5px;
-}
-
 .card {
   @apply p-4 lg:py-[2em] lg:px-[3.5em]
 }
