@@ -54,12 +54,22 @@
     },
     {
       "keywords": [
+        "React Native",
+        "Expo"
+      ],
+      "level": "",
+      "name": "Mobile Development"
+    },
+    {
+      "keywords": [
         "Node",
         "Express",
         "Stripe",
         "Prisma",
         "MySQL",
-        "MongoDB"
+        "MongoDB",
+        "PostgreSQL",
+        "Supabase"
       ],
       "level": "",
       "name": "Backend Development"
@@ -100,6 +110,19 @@
     }
   ],
   "projects": [
+    {
+      "name": "Tiny",
+      "summary": "A mobile social networking app where share ideas, ask questions, post random thoughts, find your people and more",
+      "technologies": "React Native, Expo, TypeScript, Supabase, Zustand, Nativewind, PostgreSQL, TanStack Query",
+      "mainTechnologies": [
+        "React Native",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL"
+      ],
+      "app": "https://github.com/dauphaihau/tiny?tab=readme-ov-file#testing-on-physical-device",
+      "source": "https://github.com/dauphaihau/tiny"
+    },
     {
       "name": "Arc",
       "summary": "An e-commerce marketplace web application where people come together to make, sell, buy, and collect unique items",

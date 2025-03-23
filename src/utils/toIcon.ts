@@ -1,9 +1,10 @@
 const icons = {
   gitHub: 'mdi:github',
   linkedIn: 'mdi:linkedin',
-  twitter: 'mdi:twitter',
+  twitter: 'ri:twitter-x-fill',
   portfolio: 'material-symbols:person',
   website: 'solar:planet-2-bold',
+  app: 'ic:twotone-phone-iphone',
   dot: 'carbon:dot-mark',
   whiteDot: 'ph:dot-outline-thin',
 };

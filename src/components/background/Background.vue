@@ -32,9 +32,15 @@ import RangeDate from './RangeDate.vue';
                         class="size-4"
                     />
                   </a>
-                  <a :href="project.website" target="_blank">
+                  <a v-if="project.website" :href="project.website" target="_blank">
                     <Icon
                         :icon="toIcon('website')"
+                        class="size-4"
+                    />
+                  </a>
+                  <a v-else-if="project.app" :href="project.app" target="_blank">
+                    <Icon
+                        :icon="toIcon('app')"
                         class="size-4"
                     />
                   </a>
