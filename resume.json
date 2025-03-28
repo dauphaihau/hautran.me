@@ -89,6 +89,15 @@
     },
     {
       "keywords": [
+        "Claude",
+        "ChatGPT",
+        "Grok"
+      ],
+      "level": "",
+      "name": "AI-assisted Development Tools"
+    },
+    {
+      "keywords": [
         "Git",
         "GitHub",
         "Gitlab",
