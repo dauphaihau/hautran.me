@@ -2,9 +2,9 @@
   "basics": {
     "name": "Hau Tran",
     "picture": "",
-    "label": "Frontend Developer",
+    "label": "Software Engineer",
     "headline": "",
-    "summary": "Hey, I am Hau Tran, a frontend developer passionate about web development. I enjoy creating things that live on the internet from start to finish and take great care in the experience, and code quality of the things I build. Outside of programming, I enjoy doing photography and traveling.",
+    "summary": "Hey, I am Hau Tran, a software engineer with passion for building digital services/stuff. I specialize in creating seamless products from concept to completion, take great care on exceptional user experiences and clean, efficient code. Outside of programming, I enjoy doing photography and traveling.",
     "website": "",
     "address": "",
     "projects_url": "",
@@ -35,7 +35,7 @@
         "Typescript"
       ],
       "level": "",
-      "name": "Programming languages"
+      "name": "Programming Languages"
     },
     {
       "keywords": [
@@ -47,10 +47,10 @@
         "Next",
         "Tailwind CSS",
         "Sass",
-        "TanStack Query"
+        "Vite"
       ],
       "level": "Junior",
-      "name": "Web Development"
+      "name": "Web"
     },
     {
       "keywords": [
@@ -58,34 +58,52 @@
         "Expo"
       ],
       "level": "",
-      "name": "Mobile Development"
+      "name": "Mobile"
     },
     {
       "keywords": [
         "Node",
         "Express",
         "Stripe",
-        "Prisma",
-        "MySQL",
-        "MongoDB",
-        "PostgreSQL",
-        "Supabase"
+        "Prisma"
       ],
       "level": "",
-      "name": "Backend Development"
+      "name": "Backend"
+    },
+    {
+      "keywords": [
+        "MySQL",
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      "level": "",
+      "name": "Database"
     },
     {
       "keywords": [],
       "level": "",
-      "name": "Mobile Development"
+      "name": "Mobile"
     },
     {
       "keywords": [
         "AWS",
-        "Vercel"
+        "Vercel",
+        "Render",
+        "Supabase",
+        "Docker"
       ],
       "level": "",
-      "name": "Cloud infrastructure"
+      "name": "DevOps"
+    },
+    {
+      "keywords": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Bitbucket"
+      ],
+      "level": "",
+      "name": "Version Control"
     },
     {
       "keywords": [
@@ -94,28 +112,25 @@
         "Grok"
       ],
       "level": "",
-      "name": "AI-assisted Development Tools"
+      "name": "AI-Assisted Development Tools"
     },
     {
       "keywords": [
-        "Git",
-        "GitHub",
-        "Gitlab",
         "Jira",
         "Figma",
-        "Postman",
-        "Docker"
+        "Postman"
       ],
       "level": "",
-      "name": "Misc Tools"
+      "name": "Tools & Utilities"
     },
     {
       "keywords": [
+        "Agile",
         "RESTful API",
-        "Agile"
+        "OOP"
       ],
       "level": "",
-      "name": "Others"
+      "name": "Methodologies & Concepts"
     }
   ],
   "projects": [
@@ -175,7 +190,7 @@
   "work": [
     {
       "company": "South Telecom",
-      "position": "Frontend Developer Fresher",
+      "position": "Frontend Developer",
       "website": "https://southtelecom.vn",
       "location": "Full-time",
       "isCurrentRole": false,
