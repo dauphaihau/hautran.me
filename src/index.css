@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary-light: var(--c-light);
+  --color-primary-deep: var(--c-deep);
+  --color-primary-deeper: var(--c-deeper);
+}
 
 :root {
   --c-bg: #fff;

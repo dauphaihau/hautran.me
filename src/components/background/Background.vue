@@ -125,6 +125,8 @@ import RangeDate from './RangeDate.vue';
 </template>
 
 <style scoped>
+@reference "../../index.css";
+
 .wrapper {
   @apply text-left space-y-4;
 }
