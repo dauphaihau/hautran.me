@@ -2,9 +2,9 @@
   "basics": {
     "name": "Hau Tran",
     "picture": "",
-    "label": "Software Engineer",
+    "label": "Web Developer",
     "headline": "",
-    "summary": "Hey, I am Hau Tran, a software engineer with passion for building digital services/stuff. I specialize in creating seamless products from concept to completion, take great care on exceptional user experiences and clean, efficient code. Outside of programming, I enjoy doing photography and traveling.",
+    "summary": "Hey, I am Hau Tran, a web developer with passion for building digital services/stuff. I specialize in creating seamless products from concept to completion, take great care on exceptional user experiences and clean, efficient code. Outside of programming, I enjoy exploring art and reading the Bible.",
     "website": "",
     "address": "",
     "projects_url": "",
@@ -92,7 +92,6 @@
     },
     {
       "keywords": [
-        "Git",
         "GitHub",
         "GitLab",
         "Bitbucket"
@@ -111,78 +110,137 @@
     },
     {
       "keywords": [
-        "Jira",
-        "Figma",
-        "Postman"
-      ],
-      "level": "",
-      "name": "Tools & Utilities"
-    },
-    {
-      "keywords": [
         "Agile",
         "RESTful API",
         "OOP"
       ],
       "level": "",
       "name": "Methodologies & Concepts"
+    },
+    {
+      "keywords": [
+        "Jira",
+        "ClickUp",
+        "Figma",
+        "Postman"
+      ],
+      "level": "",
+      "name": "Tools & Utilities"
     }
   ],
-  "projects": [
-    {
-      "name": "Tiny",
-      "summary": "A mobile social networking app where share ideas, ask questions, post random thoughts, find your people and more",
-      "technologies": "React Native, Expo, TypeScript, Supabase, Zustand, Nativewind, PostgreSQL, TanStack Query",
-      "mainTechnologies": [
-        "React Native",
-        "TypeScript",
-        "Supabase",
-        "PostgreSQL"
-      ],
-      "app": "https://github.com/dauphaihau/tiny?tab=readme-ov-file#testing-on-physical-device",
-      "source": "https://github.com/dauphaihau/tiny"
-    },
-    {
-      "name": "Arc",
-      "summary": "An e-commerce marketplace web application where people come together to make, sell, buy, and collect unique items",
-      "technologies": "TypeScript, TanStack Query, Nuxt.js, Pinia, Tailwind CSS, Express.js, MongoDB",
-      "mainTechnologies": [
-        "Nuxt.js",
-        "TypeScript",
-        "Express.js",
-        "MongoDB"
-      ],
-      "website": "https://arc-market.vercel.app",
-      "source": "https://github.com/dauphaihau/arc"
-    },
-    {
-      "name": "Meepo",
-      "summary": "A free social networking site where people converse with each other in short messages",
-      "technologies": "TypeScript, TanStack Query, Vue, Tailwind CSS, Ruby on Rails, PostgreSQL, Redis",
-      "mainTechnologies": [
-        "Vue.js",
-        "TypeScript",
-        "Ruby on Rails",
-        "PostgreSQL"
-      ],
-      "website": "https://meepo-social.vercel.app",
-      "source": "https://github.com/dauphaihau/meepo"
-    },
-    {
-      "name": "Camille",
-      "summary": "A note-taking web application where you can think, write, and plan",
-      "technologies": "Next.js, TypeScript, Tanstack Query, Tailwind CSS, Zustand, MySQL, Stripe",
-      "mainTechnologies": [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "MySQL"
-      ],
-      "website": "https://camillee.vercel.app",
-      "source": "https://github.com/dauphaihau/camille"
-    }
-  ],
+  "projects": {
+    "experimentalApps": [
+      {
+        "name": "Tiny",
+        "summary": "A mobile social networking app where share ideas, ask questions, post random thoughts, find your people and more",
+        "technologies": "React Native, Expo, TypeScript, Supabase, Zustand, Nativewind, PostgreSQL, TanStack Query",
+        "mainTechnologies": [
+          "React Native",
+          "TypeScript",
+          "Supabase",
+          "PostgreSQL"
+        ],
+        "app": "https://github.com/dauphaihau/tiny?tab=readme-ov-file#testing-on-physical-device",
+        "source": "https://github.com/dauphaihau/tiny"
+      },
+      {
+        "name": "Arc",
+        "summary": "An e-commerce marketplace web application where people come together to make, sell, buy, and collect unique items",
+        "technologies": "TypeScript, TanStack Query, Nuxt.js, Pinia, Tailwind CSS, Express.js, MongoDB",
+        "mainTechnologies": [
+          "Nuxt.js",
+          "TypeScript",
+          "Express.js",
+          "MongoDB"
+        ],
+        "website": "https://arc-market.vercel.app",
+        "source": "https://github.com/dauphaihau/arc"
+      },
+      {
+        "name": "Meepo",
+        "summary": "A free social networking site where people converse with each other in short messages",
+        "technologies": "TypeScript, TanStack Query, Vue, Tailwind CSS, Ruby on Rails, PostgreSQL, Redis",
+        "mainTechnologies": [
+          "Vue.js",
+          "TypeScript",
+          "Ruby on Rails",
+          "PostgreSQL"
+        ],
+        "website": "https://meepo-social.vercel.app",
+        "source": "https://github.com/dauphaihau/meepo"
+      },
+      {
+        "name": "Camille",
+        "summary": "A note-taking web application where you can think, write, and plan",
+        "technologies": "Next.js, TypeScript, Tanstack Query, Tailwind CSS, Zustand, MySQL, Stripe",
+        "mainTechnologies": [
+          "Next.js",
+          "TypeScript",
+          "Prisma",
+          "MySQL"
+        ],
+        "website": "https://camillee.vercel.app",
+        "source": "https://github.com/dauphaihau/camille"
+      }
+    ],
+    "devTools": [
+      {
+        "name": "agent-skills",
+        "summary": "A personal collection of reusable, agent-agnostic skills for AI coding assistants such as Codex, Claude Code, Cursor, and Windsurf.",
+        "technologies": "Markdown, SKILL.md, Codex, Claude Code, Cursor",
+        "mainTechnologies": [
+          "Markdown"
+        ],
+        "source": "https://github.com/dauphaihau/agent-skills"
+      },
+      {
+        "name": "create-react-template",
+        "summary": "A CLI scaffolding tool for generating production-ready TanStack Start and React 19 applications with Feature-Sliced Design architecture.",
+        "technologies": "TypeScript, React 19, TanStack Start, TanStack Router, Tailwind CSS, Vitest",
+        "mainTechnologies": [
+          "TypeScript",
+          "React",
+          "TanStack Start"
+        ],
+        "source": "https://github.com/dauphaihau/react-template"
+      },
+      {
+        "name": "plslog",
+        "summary": "A browser-first logging library with structured logging, namespaces, and environment-aware behavior.",
+        "technologies": "TypeScript, Logging, Browser Tooling",
+        "mainTechnologies": [
+          "TypeScript"
+        ],
+        "source": "https://github.com/dauphaihau/plslog"
+      },
+      {
+        "name": "eslint-config",
+        "summary": "My ESLint config presets for TypeScript, React, Vue and more.",
+        "technologies": "TypeScript, ESLint, pnpm, React, Vue, Tailwind CSS",
+        "mainTechnologies": [
+          "TypeScript",
+          "ESLint",
+          "Stylistic"
+        ],
+        "source": "https://github.com/dauphaihau/eslint-config"
+      }
+    ]
+  },
   "work": [
+    {
+      "company": "Marvy",
+      "position": "Full Stack Developer",
+      "website": "https://marvyco.com",
+      "location": "Full-time",
+      "isCurrentRole": false,
+      "startDate": "Jul 2025",
+      "endDate": "Apr 2026",
+      "highlights": [
+        "Developed Octokit, a no-code web platform for creating branded mini-games and AR filters for marketing campaigns and events.",
+        "Refactored a large front-end codebase and reorganized the project structure to improve maintainability, scalability, and team productivity.",
+        "Integrated AI-powered asset editing and generation, allowing users to transform and create game assets in-editor"
+      ]
+    },
     {
       "company": "South Telecom",
       "position": "Frontend Developer",
@@ -192,10 +250,10 @@
       "startDate": "Apr 2022",
       "endDate": "Sep 2023",
       "highlights": [
-        "Develop user-facing features and reusable code, ensuring UI/UX designs are feasible and optimized for performance and scalability",
-        "Collaborate with BAs, POs, designers, and back-end developers to align on requirements and implementation",
+        "Develop user-facing features and reusable code, ensuring UI/UX designs are feasible and optimized for performance and scalability.",
+        "Collaborate with BAs, POs, designers, and back-end developers to align on requirements and implementation.",
         "Write unit tests for quality assurance.",
-        "Maintain, debug, and support project releases in production"
+        "Maintain, debug, and support project releases in production."
       ]
     }
   ],
@@ -211,4 +269,3 @@
     }
   ]
 }
-
