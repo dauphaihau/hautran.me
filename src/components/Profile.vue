@@ -9,7 +9,7 @@ import { toIcon, IconKey } from '../utils/to-icon.ts';
     <div class="sticky top-0">
       <div class="card text-left">
         <div>
-          <h3 class="text-3xl font-bold text-primary-deeper">
+          <h3 class="text-3xl font-bold text-primary-deeper text-nowrap">
             {{ resume.basics.name }}
           </h3>
           <div class="text-primary-light text-nowrap">
