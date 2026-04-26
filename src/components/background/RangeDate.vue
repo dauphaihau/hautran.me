@@ -8,9 +8,13 @@ defineProps<{
 
 <template>
   <div class="flex gap-x-1 text-primary-light font-medium text-sm">
-    <div class="">{{ startDate }}</div>
+    <div class="">
+      {{ startDate }}
+    </div>
     -
-    <div class="">{{ endDate }}</div>
+    <div class="">
+      {{ endDate }}
+    </div>
   </div>
 </template>
 

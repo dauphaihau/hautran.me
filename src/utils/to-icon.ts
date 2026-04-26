@@ -9,12 +9,12 @@ const icons = {
   whiteDot: 'ph:dot-outline-thin',
 };
 
-export type IconKey = keyof typeof icons
+export type IconKey = keyof typeof icons;
 
-function lowerCaseFirstLetter(s: string) {
-  return s.charAt(0).toLowerCase() + s.slice(1);
+function lowerCaseFirstLetter(str: string): string {
+  return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
-export function toIcon(s: IconKey) {
-  return icons[lowerCaseFirstLetter(s) as IconKey];
+export function toIcon(key: IconKey): string {
+  return icons[lowerCaseFirstLetter(key) as IconKey];
 }
