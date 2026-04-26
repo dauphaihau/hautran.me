@@ -7,13 +7,13 @@ import resume from '../resume.json';
 <template>
   <div class="wrapper">
     <div class="content">
-      <Profile/>
-      <Background class="max-w-[50em]"/>
+      <Profile />
+      <Background class="max-w-[50em]" />
     </div>
     <footer class="text-center mt-10">
-      <div class="border-t w-72 mx-auto mb-4"/>
+      <div class="border-t w-72 mx-auto mb-4" />
       <div>
-        © {{ new Date().getFullYear() }} {{resume.basics.name}}
+        © {{ new Date().getFullYear() }} {{ resume.basics.name }}
       </div>
     </footer>
   </div>
