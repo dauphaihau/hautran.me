@@ -11,6 +11,7 @@ type ResumeProject = {
   technologies: string
   mainTechnologies: string[]
   source: string
+  npm?: string
   website?: string
   app?: string
 };
@@ -78,7 +79,7 @@ const devTools: ResumeProject[] = resume.projects.devTools;
             <h5 class="section-label">
               Experimental Apps
             </h5>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-10">
               <div
                 v-for="(project, idx) of experimentalApps"
                 :key="idx"
@@ -147,7 +148,7 @@ const devTools: ResumeProject[] = resume.projects.devTools;
             <h5 class="section-label">
               Dev Tools
             </h5>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-10">
               <div
                 v-for="(project, idx) of devTools"
                 :key="idx"
@@ -164,6 +165,16 @@ const devTools: ResumeProject[] = resume.projects.devTools;
                       >
                         <Icon
                           :icon="toIcon('gitHub')"
+                          class="size-4"
+                        />
+                      </a>
+                      <a
+                        v-if="project.npm"
+                        :href="project.npm"
+                        target="_blank"
+                      >
+                        <Icon
+                          :icon="toIcon('npm')"
                           class="size-4"
                         />
                       </a>

@@ -1,5 +1,6 @@
 const icons = {
   gitHub: 'mdi:github',
+  npm: 'teenyicons:npm-outline',
   linkedIn: 'mdi:linkedin',
   twitter: 'ri:twitter-x-fill',
   portfolio: 'material-symbols:person',

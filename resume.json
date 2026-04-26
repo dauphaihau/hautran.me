@@ -194,15 +194,16 @@
         "source": "https://github.com/dauphaihau/agent-skills"
       },
       {
-        "name": "create-react-template",
-        "summary": "A CLI scaffolding tool for generating production-ready TanStack Start and React 19 applications with Feature-Sliced Design architecture.",
-        "technologies": "TypeScript, React 19, TanStack Start, TanStack Router, Tailwind CSS, Vitest",
+        "name": "eslint-config",
+        "summary": "My ESLint config presets for TypeScript, React, Vue and more.",
+        "technologies": "TypeScript, ESLint, pnpm, React, Vue, Tailwind CSS, Stylistic",
         "mainTechnologies": [
           "TypeScript",
-          "React",
-          "TanStack Start"
+          "ESLint",
+          "Stylistic"
         ],
-        "source": "https://github.com/dauphaihau/react-template"
+        "npm": "https://www.npmjs.com/package/%40dauphaihau%2Feslint-config",
+        "source": "https://github.com/dauphaihau/eslint-config"
       },
       {
         "name": "plslog",
@@ -211,18 +212,30 @@
         "mainTechnologies": [
           "TypeScript"
         ],
+        "npm": "https://www.npmjs.com/package/plslog",
         "source": "https://github.com/dauphaihau/plslog"
       },
       {
-        "name": "eslint-config",
-        "summary": "My ESLint config presets for TypeScript, React, Vue and more.",
-        "technologies": "TypeScript, ESLint, pnpm, React, Vue, Tailwind CSS",
+        "name": "create-react-template",
+        "summary": "A CLI scaffolding tool for generating production-ready TanStack Start and React 19 applications with Feature-Sliced Design architecture.",
+        "technologies": "TypeScript, React 19, TanStack Start, TanStack Router, Tailwind CSS, Vitest",
         "mainTechnologies": [
           "TypeScript",
-          "ESLint",
-          "Stylistic"
+          "React",
+          "TanStack Start"
         ],
-        "source": "https://github.com/dauphaihau/eslint-config"
+        "npm": "https://www.npmjs.com/package/create-react-template",
+        "source": "https://github.com/dauphaihau/react-template"
+      },
+      {
+        "name": "dotfiles",
+        "summary": "My shell configuration, aliases, and workflow tooling for a faster command-line experience.",
+        "technologies": "GNU Stow, Zsh, Shell",
+        "mainTechnologies": [
+          "GNU Stow",
+          "Zsh"
+        ],
+        "source": "https://github.com/dauphaihau/dotfiles"
       }
     ]
   },
