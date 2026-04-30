@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import resume from '../../../resume.json';
-import { toIcon } from '../../utils/to-icon.ts';
 import Accomplish from './accomplish.vue';
+import ProjectSection from './project-section.vue';
 import RangeDate from './range-date.vue';
 
 type ResumeProject = {
@@ -33,6 +32,7 @@ const devTools: ResumeProject[] = resume.projects.devTools;
           </p>
         </div>
       </div>
+
       <div class="wrapper">
         <h4 class="title">
           Work Experience
@@ -75,153 +75,14 @@ const devTools: ResumeProject[] = resume.projects.devTools;
           Projects
         </h4>
         <div class="content space-y-12">
-          <div class="space-y-4">
-            <h5 class="section-label">
-              Experimental Apps
-            </h5>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-10">
-              <div
-                v-for="(project, idx) of experimentalApps"
-                :key="idx"
-              >
-                <div class="space-y-1">
-                  <div class="flex items-center gap-3">
-                    <h3 class="primary-label">
-                      {{ project.name }}
-                    </h3>
-                    <div class="flex gap-x-3 items-center py-1">
-                      <a
-                        :href="project.source"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('gitHub')"
-                          class="size-4"
-                        />
-                      </a>
-                      <a
-                        v-if="project.website"
-                        :href="project.website"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('website')"
-                          class="size-4"
-                        />
-                      </a>
-                      <a
-                        v-else-if="project.app"
-                        :href="project.app"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('app')"
-                          class="size-4"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="text-primary-light text-sm">
-                    {{ project.summary }}
-                  </div>
-                  <div class="text-[13px] flex flex-wrap items-center gap-1.5">
-                    <div
-                      v-for="(tech, techIdx) of project.mainTechnologies"
-                      :key="techIdx"
-                    >
-                      <div class="flex items-center gap-1.5">
-                        <span>{{ tech }}</span>
-                        <Icon
-                          v-if="project.mainTechnologies[techIdx + 1]"
-                          :icon="toIcon('dot')"
-                          class="size-2"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <h5 class="section-label">
-              Dev Tools
-            </h5>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-10">
-              <div
-                v-for="(project, idx) of devTools"
-                :key="idx"
-              >
-                <div class="space-y-1">
-                  <div class="flex items-center gap-3">
-                    <h3 class="primary-label">
-                      {{ project.name }}
-                    </h3>
-                    <div class="flex gap-x-3 items-center py-1">
-                      <a
-                        :href="project.source"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('gitHub')"
-                          class="size-4"
-                        />
-                      </a>
-                      <a
-                        v-if="project.npm"
-                        :href="project.npm"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('npm')"
-                          class="size-4"
-                        />
-                      </a>
-                      <a
-                        v-if="project.website"
-                        :href="project.website"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('website')"
-                          class="size-4"
-                        />
-                      </a>
-                      <a
-                        v-else-if="project.app"
-                        :href="project.app"
-                        target="_blank"
-                      >
-                        <Icon
-                          :icon="toIcon('app')"
-                          class="size-4"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="text-primary-light text-sm">
-                    {{ project.summary }}
-                  </div>
-                  <div class="text-[13px] flex flex-wrap items-center gap-1.5">
-                    <div
-                      v-for="(tech, techIdx) of project.mainTechnologies"
-                      :key="techIdx"
-                    >
-                      <div class="flex items-center gap-1.5">
-                        <span>{{ tech }}</span>
-                        <Icon
-                          v-if="project.mainTechnologies[techIdx + 1]"
-                          :icon="toIcon('dot')"
-                          class="size-2"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProjectSection
+            label="Experimental Apps"
+            :projects="experimentalApps"
+          />
+          <ProjectSection
+            label="Dev Tools"
+            :projects="devTools"
+          />
         </div>
       </div>
 
@@ -301,9 +162,5 @@ const devTools: ResumeProject[] = resume.projects.devTools;
 
 .content .primary-label {
   @apply font-bold text-primary-deeper;
-}
-
-.section-label {
-  @apply text-sm font-semibold uppercase tracking-[0.12em] text-primary-light;
 }
 </style>
