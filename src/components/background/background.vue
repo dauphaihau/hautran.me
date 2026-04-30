@@ -2,8 +2,8 @@
 import { Icon } from '@iconify/vue';
 import resume from '../../../resume.json';
 import { toIcon } from '../../utils/to-icon.ts';
-import Accomplish from './Accomplish.vue';
-import RangeDate from './RangeDate.vue';
+import Accomplish from './accomplish.vue';
+import RangeDate from './range-date.vue';
 
 type ResumeProject = {
   name: string

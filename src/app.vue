@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Profile from './components/Profile.vue';
-import Background from './components/background/Background.vue';
+import Profile from './components/profile.vue';
+import Background from './components/background/background.vue';
 import resume from '../resume.json';
-import { useScrambleAnimation } from './composables/useScrambleAnimation.ts';
+import { useScrambleAnimation } from './composables/use-scramble-animation.ts';
 
 useScrambleAnimation();
 </script>

@@ -9,12 +9,12 @@ import { animate, createTimeline, scrambleText } from 'animejs';
 // HOVER_SETTLE       ms to settle after hover scramble
 // ────────────────────────────────────────────────────────────────────────────
 const INTRO_DURATION = 400;
-const INTRO_SETTLE   = 150;
-const INTRO_STAGGER  = 80;
+const INTRO_SETTLE = 150;
+const INTRO_STAGGER = 80;
 const HOVER_DURATION = 500;
-const HOVER_SETTLE   = 250;
+const HOVER_SETTLE = 250;
 
-export function useScrambleAnimation() {
+export function useScrambleAnimation(): void {
   onMounted(() => {
     const els: Element[] = [];
     const walker = document.createTreeWalker(
@@ -52,7 +52,7 @@ export function useScrambleAnimation() {
     // (siblings with no text leaves of their own), and hide them initially.
     const elsSet = new Set(els);
     const nearbyIconsMap = new Map<Element, Element[]>();
-    const collectIconSiblings = (container: Element, child: Element, out: Element[]) => {
+    const collectIconSiblings = (container: Element, child: Element, out: Element[]): void => {
       Array.from(container.children).forEach(sibling => {
         if (sibling === child) return;
         if ([...elsSet].some(textEl => sibling.contains(textEl))) return;
@@ -81,7 +81,7 @@ export function useScrambleAnimation() {
 
     // Both timelines share the same cleanup; run it only after the last one finishes.
     let doneCount = 0;
-    const cleanup = () => {
+    const cleanup = (): void => {
       if (++doneCount < 2) return;
       els.forEach((el, i) => {
         const h = el as HTMLElement;
@@ -90,9 +90,9 @@ export function useScrambleAnimation() {
       });
     };
 
-    const buildTimeline = (groupEls: Element[]) => {
+    const buildTimeline = (groupEls: Element[]): ReturnType<typeof createTimeline> => {
       const elsIndex = new Map(els.map((el, i) => [el, i]));
-      const roundedTop = (el: Element) => Math.round(metrics[elsIndex.get(el)!].top);
+      const roundedTop = (el: Element): number => Math.round(metrics[elsIndex.get(el)!].top);
       const uniqueTops = [...new Set(groupEls.map(roundedTop))].sort((a, b) => a - b);
       const topToRow = new Map(uniqueTops.map((t, rowIdx) => [t, rowIdx]));
 
@@ -123,7 +123,7 @@ export function useScrambleAnimation() {
     buildTimeline(backgroundEls).init();
 
     els.forEach(el => {
-      const replay = () => {
+      const replay = (): void => {
         const h = el as HTMLElement;
         const { width, height } = h.getBoundingClientRect();
         h.style.width = `${width}px`;
