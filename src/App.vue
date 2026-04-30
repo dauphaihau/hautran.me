@@ -2,6 +2,9 @@
 import Profile from './components/Profile.vue';
 import Background from './components/background/Background.vue';
 import resume from '../resume.json';
+import { useScrambleAnimation } from './composables/useScrambleAnimation.ts';
+
+useScrambleAnimation();
 </script>
 
 <template>

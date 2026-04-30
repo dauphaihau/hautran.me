@@ -130,7 +130,7 @@ const devTools: ResumeProject[] = resume.projects.devTools;
                       :key="techIdx"
                     >
                       <div class="flex items-center gap-1.5">
-                        {{ tech }}
+                        <span>{{ tech }}</span>
                         <Icon
                           v-if="project.mainTechnologies[techIdx + 1]"
                           :icon="toIcon('dot')"
@@ -209,7 +209,7 @@ const devTools: ResumeProject[] = resume.projects.devTools;
                       :key="techIdx"
                     >
                       <div class="flex items-center gap-1.5">
-                        {{ tech }}
+                        <span>{{ tech }}</span>
                         <Icon
                           v-if="project.mainTechnologies[techIdx + 1]"
                           :icon="toIcon('dot')"

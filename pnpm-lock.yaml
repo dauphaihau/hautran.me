@@ -11,13 +11,16 @@ importers:
       '@iconify/vue':
         specifier: ^4.1.2
         version: 4.1.2(vue@3.5.9(typescript@5.6.2))
+      animejs:
+        specifier: ^4.4.0
+        version: 4.4.0
       vue:
         specifier: ^3.4.37
         version: 3.5.9(typescript@5.6.2)
     devDependencies:
       '@dauphaihau/eslint-config':
-        specifier: ^0.3.0
-        version: 0.3.0(eslint-plugin-tailwindcss@3.18.3(tailwindcss@4.2.1))(eslint-plugin-vue@10.9.0(@stylistic/eslint-plugin@5.10.0(eslint@10.2.1(jiti@2.6.1)))(@typescript-eslint/parser@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2))(eslint@10.2.1(jiti@2.6.1))(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1))))(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2)(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1)))
+        specifier: ^0.3.1
+        version: 0.3.1(eslint-plugin-tailwindcss@3.18.3(tailwindcss@4.2.1))(eslint-plugin-vue@10.9.0(@stylistic/eslint-plugin@5.10.0(eslint@10.2.1(jiti@2.6.1)))(@typescript-eslint/parser@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2))(eslint@10.2.1(jiti@2.6.1))(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1))))(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2)(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1)))
       '@tailwindcss/vite':
         specifier: ^4.1.0
         version: 4.2.1(vite@5.4.8(lightningcss@1.31.1))
@@ -68,8 +71,8 @@ packages:
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
 
-  '@dauphaihau/eslint-config@0.3.0':
-    resolution: {integrity: sha512-lcWvbgjU1TB2nLNzQNjJxwNCtUDO1V3nv2bWmzyXtMlP1zB3y9pnFntmCJLLllxGIPeUgsVH27phy2XZwFSFeA==}
+  '@dauphaihau/eslint-config@0.3.1':
+    resolution: {integrity: sha512-MVUj5pfV7G66K/QvKu7BZD4+1MyulxGNKWVFYeCmX5dMkyF870SaoSXE9Ut5sgv18A+PlQfk2WpfK4lnKqozFA==}
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
       eslint-plugin-react: '*'
@@ -652,6 +655,9 @@ packages:
 
   ajv@6.15.0:
     resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
+
+  animejs@4.4.0:
+    resolution: {integrity: sha512-GcMGjPjWP6VLjOi8Z0RCLfKS4LiPc2TkXNtdCadsDFsVkRoKt/hyXyV8MSKOUy1KULLzXt0yigdRYfEcxlo9Dw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1293,7 +1299,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@dauphaihau/eslint-config@0.3.0(eslint-plugin-tailwindcss@3.18.3(tailwindcss@4.2.1))(eslint-plugin-vue@10.9.0(@stylistic/eslint-plugin@5.10.0(eslint@10.2.1(jiti@2.6.1)))(@typescript-eslint/parser@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2))(eslint@10.2.1(jiti@2.6.1))(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1))))(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2)(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1)))':
+  '@dauphaihau/eslint-config@0.3.1(eslint-plugin-tailwindcss@3.18.3(tailwindcss@4.2.1))(eslint-plugin-vue@10.9.0(@stylistic/eslint-plugin@5.10.0(eslint@10.2.1(jiti@2.6.1)))(@typescript-eslint/parser@8.59.0(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2))(eslint@10.2.1(jiti@2.6.1))(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1))))(eslint@10.2.1(jiti@2.6.1))(typescript@5.6.2)(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1)))':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.2.1(jiti@2.6.1))
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.2.1(jiti@2.6.1))
@@ -1799,6 +1805,8 @@ snapshots:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+
+  animejs@4.4.0: {}
 
   balanced-match@1.0.2: {}
 
