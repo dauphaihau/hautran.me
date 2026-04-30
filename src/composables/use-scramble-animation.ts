@@ -102,7 +102,6 @@ export function runScrambleAnimation(): void {
       tl.add(el, {
         ...(metrics[i].hasBg ? { opacity: { to: 1, duration: 300 } } : {}),
         innerHTML: scrambleText({
-          chars: 'lowercase',
           override: '',
           duration: INTRO_DURATION,
           settleDuration: INTRO_SETTLE,
@@ -129,7 +128,6 @@ export function runScrambleAnimation(): void {
       htmlElement.style.overflow = 'hidden';
       animate(el, {
         innerHTML: scrambleText({
-          chars: 'lowercase',
           cursor: '░▒▓█',
           duration: HOVER_DURATION,
           settleDuration: HOVER_SETTLE,
