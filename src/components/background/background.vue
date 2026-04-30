@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import resume from '../../../resume.json';
+import { computed } from 'vue';
+import type { Resume } from '../../data/resume.ts';
 import Accomplish from './accomplish.vue';
 import ProjectSection from './project-section.vue';
 import RangeDate from './range-date.vue';
@@ -15,8 +16,12 @@ type ResumeProject = {
   app?: string
 };
 
-const experimentalApps: ResumeProject[] = resume.projects.experimentalApps;
-const devTools: ResumeProject[] = resume.projects.devTools;
+const props = defineProps<{
+  resume: Resume
+}>();
+
+const experimentalApps = computed<ResumeProject[]>(() => props.resume.projects.experimentalApps);
+const devTools = computed<ResumeProject[]>(() => props.resume.projects.devTools);
 </script>
 
 <template>

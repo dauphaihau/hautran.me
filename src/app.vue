@@ -1,17 +1,42 @@
 <script setup lang="ts">
+import { nextTick, onMounted, ref } from 'vue';
 import Profile from './components/profile.vue';
 import Background from './components/background/background.vue';
-import resume from '../resume.json';
-import { useScrambleAnimation } from './composables/use-scramble-animation.ts';
+import { runScrambleAnimation } from './composables/use-scramble-animation.ts';
+import {
+  fetchRemoteResume,
+  type Resume,
+} from './data/resume.ts';
 
-useScrambleAnimation();
+const resume = ref<Resume | null>(null);
+const loadError = ref<unknown>(null);
+
+onMounted(async () => {
+  try {
+    resume.value = await fetchRemoteResume();
+  }
+  catch (error) {
+    console.warn(error);
+    loadError.value = error;
+    return;
+  }
+
+  await nextTick();
+  runScrambleAnimation();
+});
 </script>
 
 <template>
-  <div class="wrapper">
+  <div
+    v-if="resume"
+    class="wrapper"
+  >
     <div class="content">
-      <Profile />
-      <Background class="max-w-[50em]" />
+      <Profile :resume="resume" />
+      <Background
+        :resume="resume"
+        class="max-w-[50em]"
+      />
     </div>
     <footer class="text-center mt-10">
       <div class="border-t w-72 mx-auto mb-4" />
@@ -20,6 +45,12 @@ useScrambleAnimation();
       </div>
     </footer>
   </div>
+  <main
+    v-else-if="loadError"
+    class="wrapper"
+  >
+    <p>Unable to load resume.</p>
+  </main>
 </template>
 
 <style scoped>

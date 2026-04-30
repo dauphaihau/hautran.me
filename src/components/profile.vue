@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import resume from '../../resume.json';
+import type { Resume } from '../data/resume.ts';
 import { toIcon, IconKey } from '../utils/to-icon.ts';
+
+defineProps<{
+  resume: Resume
+}>();
 </script>
 
 <template>
