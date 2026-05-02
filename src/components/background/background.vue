@@ -1,27 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { Resume } from '../../data/resume.ts';
+import type { Resume, ResumeProject } from '../../data/resume.ts';
 import Accomplish from './accomplish.vue';
 import ProjectSection from './project-section.vue';
 import RangeDate from './range-date.vue';
-
-type ResumeProject = {
-  name: string
-  summary: string
-  technologies: string
-  mainTechnologies: string[]
-  source: string
-  npm?: string
-  website?: string
-  app?: string
-};
 
 const props = defineProps<{
   resume: Resume
 }>();
 
-const experimentalApps = computed<ResumeProject[]>(() => props.resume.projects.experimentalApps);
-const devTools = computed<ResumeProject[]>(() => props.resume.projects.devTools);
+function getVisibleProjects(projects?: ResumeProject[] | null): ResumeProject[] {
+  return (projects ?? []).filter(project => project.visible !== false);
+}
+
+const experimentalApps = computed<ResumeProject[]>(() => getVisibleProjects(props.resume.projects.experimentalApps));
+const devTools = computed<ResumeProject[]>(() => getVisibleProjects(props.resume.projects.devTools));
+const hasProjects = computed<boolean>(() => experimentalApps.value.length > 0 || devTools.value.length > 0);
 </script>
 
 <template>
@@ -75,16 +69,21 @@ const devTools = computed<ResumeProject[]>(() => props.resume.projects.devTools)
         </div>
       </div>
 
-      <div class="wrapper">
+      <div
+        v-if="hasProjects"
+        class="wrapper"
+      >
         <h4 class="title">
           Projects
         </h4>
         <div class="content space-y-12">
           <ProjectSection
+            v-if="experimentalApps.length > 0"
             label="Experimental Apps"
             :projects="experimentalApps"
           />
           <ProjectSection
+            v-if="devTools.length > 0"
             label="Dev Tools"
             :projects="devTools"
           />

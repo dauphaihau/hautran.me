@@ -1,17 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+import type { ResumeProject } from '../../data/resume.ts';
 import { toIcon } from '../../utils/to-icon.ts';
-
-type ResumeProject = {
-  name: string
-  summary: string
-  technologies: string
-  mainTechnologies: string[]
-  source: string
-  npm?: string
-  website?: string
-  app?: string
-};
 
 defineProps<{ project: ResumeProject }>();
 </script>
@@ -23,25 +13,6 @@ defineProps<{ project: ResumeProject }>();
         {{ project.name }}
       </h3>
       <div class="flex gap-x-3 items-center py-1">
-        <a
-          :href="project.source"
-          target="_blank"
-        >
-          <Icon
-            :icon="toIcon('gitHub')"
-            class="size-4"
-          />
-        </a>
-        <a
-          v-if="project.npm"
-          :href="project.npm"
-          target="_blank"
-        >
-          <Icon
-            :icon="toIcon('npm')"
-            class="size-4"
-          />
-        </a>
         <a
           v-if="project.website"
           :href="project.website"
@@ -59,6 +30,25 @@ defineProps<{ project: ResumeProject }>();
         >
           <Icon
             :icon="toIcon('app')"
+            class="size-4"
+          />
+        </a>
+        <a
+          :href="project.source"
+          target="_blank"
+        >
+          <Icon
+            :icon="toIcon('gitHub')"
+            class="size-4"
+          />
+        </a>
+        <a
+          v-if="project.npm"
+          :href="project.npm"
+          target="_blank"
+        >
+          <Icon
+            :icon="toIcon('npm')"
             class="size-4"
           />
         </a>

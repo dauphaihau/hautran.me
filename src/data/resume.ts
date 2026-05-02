@@ -20,6 +20,7 @@ export type ResumeProject = {
   technologies: string
   mainTechnologies: string[]
   source: string
+  visible?: boolean
   npm?: string
   website?: string
   app?: string
@@ -62,8 +63,8 @@ export type Resume = {
   basics: ResumeBasics
   skills: ResumeSkill[]
   projects: {
-    experimentalApps: ResumeProject[]
-    devTools: ResumeProject[]
+    experimentalApps?: ResumeProject[] | null
+    devTools?: ResumeProject[] | null
   }
   work: ResumeWork[]
   education: ResumeEducation[]

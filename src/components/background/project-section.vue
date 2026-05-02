@@ -1,16 +1,6 @@
 <script setup lang="ts">
+import type { ResumeProject } from '../../data/resume.ts';
 import ProjectCard from './project-card.vue';
-
-type ResumeProject = {
-  name: string
-  summary: string
-  technologies: string
-  mainTechnologies: string[]
-  source: string
-  npm?: string
-  website?: string
-  app?: string
-};
 
 defineProps<{
   label: string
