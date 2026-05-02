@@ -14,8 +14,8 @@ defineProps<{ project: ResumeProject }>();
       </h3>
       <div class="flex gap-x-3 items-center py-1">
         <a
-          v-if="project.website"
-          :href="project.website"
+          v-if="project.webAppUrl"
+          :href="project.webAppUrl"
           target="_blank"
         >
           <Icon
@@ -24,8 +24,8 @@ defineProps<{ project: ResumeProject }>();
           />
         </a>
         <a
-          v-else-if="project.app"
-          :href="project.app"
+          v-else-if="project.mobileAppUrl"
+          :href="project.mobileAppUrl"
           target="_blank"
         >
           <Icon
@@ -34,7 +34,7 @@ defineProps<{ project: ResumeProject }>();
           />
         </a>
         <a
-          :href="project.source"
+          :href="project.sourceUrl"
           target="_blank"
         >
           <Icon
@@ -43,8 +43,8 @@ defineProps<{ project: ResumeProject }>();
           />
         </a>
         <a
-          v-if="project.npm"
-          :href="project.npm"
+          v-if="project.npmUrl"
+          :href="project.npmUrl"
           target="_blank"
         >
           <Icon

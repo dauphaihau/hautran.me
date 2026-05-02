@@ -19,11 +19,11 @@ export type ResumeProject = {
   summary: string
   technologies: string
   mainTechnologies: string[]
-  source: string
+  sourceUrl: string
   visible?: boolean
-  npm?: string
-  website?: string
-  app?: string
+  npmUrl?: string
+  webAppUrl?: string
+  mobileAppUrl?: string
 };
 
 export type ResumeWork = {
