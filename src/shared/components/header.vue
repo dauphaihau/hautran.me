@@ -2,6 +2,8 @@
 import { RouterLink } from 'vue-router';
 import ThemeButton from './theme-button.vue';
 
+defineOptions({ name: 'SiteHeader' });
+
 const links = [
   { label: 'Projects', to: '/projects' },
   { label: 'Resume', to: '/resume' },
@@ -11,7 +13,12 @@ const links = [
 <template>
   <header class="site-header">
     <div class="nav">
-      <RouterLink to="/" class="logo">ht</RouterLink>
+      <RouterLink
+        to="/"
+        class="logo"
+      >
+        ht
+      </RouterLink>
       <nav class="nav-links">
         <RouterLink
           v-for="link in links"

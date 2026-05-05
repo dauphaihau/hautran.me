@@ -3,6 +3,8 @@ import { Icon } from '@iconify/vue';
 import type { Resume } from '~/shared/api/resume/dto.ts';
 import { toIcon, type IconKey } from '~/shared/utils/to-icon.ts';
 
+defineOptions({ name: 'SiteFooter' });
+
 defineProps<{
   resume: Resume
 }>();

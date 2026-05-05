@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   readonly VITE_RESUME_URL: string
 }
 

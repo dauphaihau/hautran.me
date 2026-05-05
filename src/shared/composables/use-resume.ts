@@ -1,4 +1,6 @@
-import { computed, inject, type ComputedRef, type Ref } from 'vue';
+import {
+  computed, inject, type ComputedRef, type Ref 
+} from 'vue';
 import type { Resume } from '~/shared/api/resume/dto.ts';
 
 export function useResume(): ComputedRef<Resume> {
