@@ -3,7 +3,7 @@ import type { Resume } from '~/shared/api/resume/dto.ts';
 import Accomplish from '~/shared/components/background/accomplish.vue';
 import RangeDate from '~/shared/components/background/range-date.vue';
 
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   resume: Resume
   showWork?: boolean
   showKnowledge?: boolean
