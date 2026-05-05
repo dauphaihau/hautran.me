@@ -32,17 +32,19 @@ export function runScrambleAnimation(): void {
 
   // Batch all reads up front to avoid layout thrashing
   const metrics = els.map(el => {
-    const { height, top } = el.getBoundingClientRect();
+    const { height, width, top } = el.getBoundingClientRect();
     const bg = getComputedStyle(el).backgroundColor;
     const hasBg = bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent';
-    return { height, top, hasBg };
+    return { height, width, top, hasBg };
   });
 
-  // Batch all writes — height alone is enough to stabilise parent layout;
-  // overflow:hidden is intentionally omitted so the cursor chars are never clipped.
+  // Batch all writes — freeze both dimensions so flex/grid containers don't
+  // reflow while innerHTML is empty; overflow:hidden is intentionally omitted
+  // so cursor chars are never clipped.
   els.forEach((el, i) => {
     const htmlElement = el as HTMLElement;
     htmlElement.style.height = `${metrics[i].height}px`;
+    htmlElement.style.width = `${metrics[i].width}px`;
     if (metrics[i].hasBg) htmlElement.style.opacity = '0';
   });
 
@@ -88,6 +90,7 @@ export function runScrambleAnimation(): void {
     els.forEach((el, i) => {
       const htmlElement = el as HTMLElement;
       htmlElement.style.height = '';
+      htmlElement.style.width = '';
       if (metrics[i].hasBg) htmlElement.style.opacity = '';
     });
     animate(fadeEls, { opacity: 1, duration: 400 });
