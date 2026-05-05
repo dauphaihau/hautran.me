@@ -62,6 +62,6 @@ onMounted(async () => {
 }
 
 .page-body {
-  @apply container max-w-[40em] mx-auto flex flex-col flex-1;
+  @apply container max-w-[40em] mx-auto flex flex-col flex-1 mt-10 px-4 w640:px-0;
 }
 </style>

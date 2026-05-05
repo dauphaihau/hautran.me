@@ -62,7 +62,9 @@ const workItems = computed(() => props.items.map(item => ({
 }
 
 .work-row {
-  @apply flex items-center justify-between gap-4 no-underline text-base w768:text-[0.9rem];
+  @apply flex flex-col gap-0.5 no-underline text-sm
+         w640:flex-row w640:items-center w640:justify-between w640:gap-4 w640:text-base
+         w768:text-[0.9rem];
 }
 
 .work-main {

@@ -29,7 +29,7 @@ onBeforeUnmount(() => clearInterval(timer));
 <template>
   <section class="card text-left !pb-0">
     <div>
-      <h3 class="text-3xl font-bold text-primary-deeper text-nowrap">
+      <h3 class="text-2xl w640:text-3xl font-bold text-primary-deeper">
         {{ resume.basics.name }}
       </h3>
       <div class="label-wrapper">

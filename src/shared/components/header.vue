@@ -77,7 +77,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
 }
 
 .nav {
-  @apply container mx-auto flex max-w-[40em] items-center justify-between py-3;
+  @apply container mx-auto flex max-w-[40em] items-center justify-between py-3 px-4 w640:px-0;
 }
 
 .logo {

@@ -31,7 +31,7 @@ withDefaults(defineProps<{
             :key="idx"
           >
             <div class="space-y-1">
-              <div class="flex flex-col w768:flex-row justify-between gap-x-2">
+              <div class="flex flex-col gap-y-0.5 w768:flex-row w768:gap-y-0 justify-between gap-x-2">
                 <a
                   :href="item.website"
                   class="text-primary-deeper font-bold"
@@ -98,7 +98,7 @@ withDefaults(defineProps<{
             :key="idx"
           >
             <div class="space-y-1">
-              <div class="flex flex-col w768:flex-row justify-between gap-x-2">
+              <div class="flex flex-col gap-y-0.5 w768:flex-row w768:gap-y-0 justify-between gap-x-2">
                 <p class="primary-label">
                   {{ item.institution }}
                 </p>
