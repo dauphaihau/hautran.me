@@ -65,7 +65,7 @@ const props = withDefaults(defineProps<{
         <h4 class="title">
           Knowledge
         </h4>
-        <div class="content space-y-4">
+        <div class="content">
           <div
             v-for="(item, idx) of resume.skills"
             :key="idx"
