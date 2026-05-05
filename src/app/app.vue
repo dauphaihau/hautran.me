@@ -6,9 +6,11 @@ import Footer from '~/shared/components/footer.vue';
 import { attachScrambleHover, runScrambleAnimation } from '~/shared/composables/use-scramble-animation.ts';
 import { resumeApi } from '~/shared/api/resume/resume.api.ts';
 import type { Resume } from '~/shared/api/resume/dto.ts';
+import Spinner from '~/shared/components/spinner.vue';
 
 const resume = ref<Resume | null>(null);
 const loadError = ref<unknown>(null);
+const isLoading = ref(true);
 provide('resume', resume);
 
 const router = useRouter();
@@ -21,6 +23,9 @@ onMounted(async () => {
     console.warn(error);
     loadError.value = error;
     return;
+  }
+  finally {
+    isLoading.value = false;
   }
 
   await nextTick();
@@ -47,6 +52,12 @@ onMounted(async () => {
     </div>
   </div>
   <main
+    v-else-if="isLoading"
+    class="loading"
+  >
+    <Spinner />
+  </main>
+  <main
     v-else-if="loadError"
     class="wrapper"
   >
@@ -59,6 +70,10 @@ onMounted(async () => {
 
 .page-root {
   @apply flex flex-col flex-1;
+}
+
+.loading {
+  @apply flex items-center justify-center flex-1;
 }
 
 .page-body {
