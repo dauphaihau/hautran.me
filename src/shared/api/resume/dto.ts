@@ -3,7 +3,7 @@
 export type ResumeProfile = {
   network: string
   url: string
-  username: string
+  username?: string
 };
 
 export type ResumeSkill = {
