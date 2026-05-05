@@ -47,10 +47,10 @@ defineProps<{
 }
 
 .footer-content {
-  @apply flex flex-col gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left;
+  @apply flex flex-col gap-4 text-center w768:flex-row w768:items-center w768:justify-between w768:text-left;
 }
 
 .footer-links {
-  @apply flex items-center justify-center gap-5 md:justify-start;
+  @apply flex items-center justify-center gap-5 w768:justify-start;
 }
 </style>

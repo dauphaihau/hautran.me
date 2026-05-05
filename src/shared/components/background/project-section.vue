@@ -13,7 +13,7 @@ defineProps<{
     <h5 class="section-label">
       {{ label }}
     </h5>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-10">
+    <div class="grid grid-cols-1 w768:grid-cols-2 gap-y-6 gap-x-10">
       <ProjectCard
         v-for="(project, idx) of projects"
         :key="idx"

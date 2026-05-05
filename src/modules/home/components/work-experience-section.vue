@@ -58,11 +58,11 @@ const workItems = computed(() => props.items.map(item => ({
 }
 
 .work-list {
-  @apply md:pl-5;
+  @apply w768:pl-5;
 }
 
 .work-row {
-  @apply flex items-center justify-between gap-4 no-underline text-base md:text-[0.9rem];
+  @apply flex items-center justify-between gap-4 no-underline text-base w768:text-[0.9rem];
 }
 
 .work-main {

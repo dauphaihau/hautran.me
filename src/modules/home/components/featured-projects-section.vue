@@ -72,7 +72,7 @@ function getProjectUrl(project: ResumeProject): string {
 }
 
 .project-grid {
-  @apply grid grid-cols-1 gap-y-4 md:pl-6;
+  @apply grid grid-cols-1 gap-y-4 w768:pl-6;
 }
 
 .project-card {

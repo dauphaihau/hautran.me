@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex items-center md:ml-3 gap-1.5">
+  <div class="flex items-center w768:ml-3 gap-1.5">
     <div>
       <Icon
         :icon="toIcon('whiteDot')"

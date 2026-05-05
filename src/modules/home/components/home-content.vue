@@ -53,6 +53,6 @@ const allProjects = computed<ResumeProject[]>(() => [
 }
 
 .section-content {
-  @apply md:pl-5;
+  @apply w768:pl-5;
 }
 </style>

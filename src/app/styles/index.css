@@ -6,6 +6,18 @@
   --color-primary-light: var(--c-light);
   --color-primary-deep: var(--c-deep);
   --color-primary-deeper: var(--c-deeper);
+
+  --breakpoint-sm: initial;
+  --breakpoint-md: initial;
+  --breakpoint-lg: initial;
+  --breakpoint-xl: initial;
+  --breakpoint-2xl: initial;
+
+  --breakpoint-w640: 640px;
+  --breakpoint-w768: 768px;
+  --breakpoint-w1024: 1024px;
+  --breakpoint-w1280: 1280px;
+  --breakpoint-w1536: 1536px;
 }
 
 :root {
@@ -70,7 +82,7 @@ a {
 }
 
 .card {
-  @apply py-4 lg:py-[2em]
+  @apply py-4 w1024:py-[2em]
 }
 
 .content {

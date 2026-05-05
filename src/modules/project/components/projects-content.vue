@@ -49,6 +49,6 @@ const devTools = computed<ResumeProject[]>(() => getVisibleProjects(props.resume
 }
 
 .content {
-  @apply md:pl-5;
+  @apply w768:pl-5;
 }
 </style>
