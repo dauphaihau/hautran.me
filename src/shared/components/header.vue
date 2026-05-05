@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import ThemeButton from './theme-button.vue';
 
@@ -8,11 +9,20 @@ const links = [
   { label: 'Projects', to: '/projects' },
   { label: 'Resume', to: '/resume' },
 ];
+
+const scrolled = ref(false);
+
+function onScroll() {
+  scrolled.value = window.scrollY > 10;
+}
+
+onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }));
+onUnmounted(() => window.removeEventListener('scroll', onScroll));
 </script>
 
 <template>
   <header class="site-header">
-    <div class="header-border" data-scramble-fade />
+    <div class="header-bg" :class="{ scrolled }" />
     <div class="nav">
       <RouterLink
         to="/"
@@ -41,11 +51,29 @@ const links = [
 @reference "../../app/styles/index.css";
 
 .site-header {
-  @apply sticky top-0 z-10 bg-white/85 backdrop-blur dark:bg-black/70;
+  @apply sticky top-0 z-10;
 }
 
-.header-border {
-  @apply absolute bottom-0 left-0 right-0 border-b border-black/10 dark:border-white/10;
+.header-bg {
+  position: absolute;
+  inset: 0;
+  bottom: -4rem;
+  pointer-events: none;
+  backdrop-filter: blur(0px);
+  background: transparent;
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  transition: backdrop-filter 300ms, background 300ms;
+  z-index: -1;
+}
+
+.header-bg.scrolled {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0.85) 0%, transparent 100%);
+}
+
+:global(.dark .header-bg.scrolled) {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.75) 0%, transparent 100%);
 }
 
 .nav {
