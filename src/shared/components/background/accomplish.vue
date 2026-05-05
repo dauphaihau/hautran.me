@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toIcon } from '../../utils/to-icon.ts';
+import { toIcon } from '~/shared/utils/to-icon.ts';
 import { Icon } from '@iconify/vue';
 
 defineProps<{

@@ -1,0 +1,60 @@
+<script setup lang="ts">
+import { nextTick, onMounted, provide, ref } from 'vue';
+import { RouterView } from 'vue-router';
+import Header from '~/shared/components/header.vue';
+import Footer from '~/shared/components/footer.vue';
+import { runScrambleAnimation } from '~/shared/composables/use-scramble-animation.ts';
+import { resumeApi } from '~/shared/api/resume/resume.api.ts';
+import type { Resume } from '~/shared/api/resume/dto.ts';
+
+const resume = ref<Resume | null>(null);
+const loadError = ref<unknown>(null);
+provide('resume', resume);
+
+onMounted(async () => {
+  try {
+    resume.value = await resumeApi.getDetail();
+  }
+  catch (error) {
+    console.warn(error);
+    loadError.value = error;
+    return;
+  }
+
+  await nextTick();
+  runScrambleAnimation();
+});
+</script>
+
+<template>
+  <div
+    v-if="resume"
+    class="page-root"
+  >
+    <Header />
+    <div class="page-body">
+      <main class="flex-1">
+        <RouterView />
+      </main>
+      <Footer :resume="resume" />
+    </div>
+  </div>
+  <main
+    v-else-if="loadError"
+    class="wrapper"
+  >
+    <p>Unable to load resume.</p>
+  </main>
+</template>
+
+<style scoped>
+@reference "./styles/index.css";
+
+.page-root {
+  @apply flex flex-col flex-1;
+}
+
+.page-body {
+  @apply container max-w-[40em] mx-auto flex flex-col flex-1;
+}
+</style>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary-light: var(--c-light);
   --color-primary-deep: var(--c-deep);
@@ -16,19 +18,18 @@
   --c-deeper: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-bg: #0e0e0e;
-    --c-scrollbar: #111;
+:root.dark {
+  --c-bg: #0e0e0e;
+  --c-scrollbar: #111;
 
-    --c-light: #888;
-    --c: #bbb;
-    --c-deep: #ddd;
-    --c-deeper: #fff;
-  }
+  --c-light: #888;
+  --c: #bbb;
+  --c-deep: #ddd;
+  --c-deeper: #fff;
 }
 
 html {
+  height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -38,6 +39,9 @@ html {
 }
 
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif;
   color-scheme: light dark;
   font-synthesis: none;
@@ -47,6 +51,12 @@ body {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 ::selection {
@@ -60,5 +70,9 @@ a {
 }
 
 .card {
-  @apply p-4 lg:py-[2em] lg:px-[3.5em]
+  @apply py-4 lg:py-[2em]
+}
+
+.content {
+  @apply mx-auto flex max-w-[50em] flex-col gap-6;
 }

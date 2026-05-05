@@ -1,7 +1,5 @@
 /* eslint @typescript-eslint/naming-convention: ["error", { "selector": "typeProperty", "format": ["camelCase", "snake_case"] }] */
 
-export const RESUME_URL = 'https://gist.githubusercontent.com/dauphaihau/efcc9bad54416de44f8c4cceae1ea200/raw/resume.json';
-
 export type ResumeProfile = {
   network: string
   url: string
@@ -20,6 +18,7 @@ export type ResumeProject = {
   technologies: string
   mainTechnologies: string[]
   sourceUrl: string
+  featured?: boolean
   visible?: boolean
   npmUrl?: string
   webAppUrl?: string
@@ -69,18 +68,3 @@ export type Resume = {
   work: ResumeWork[]
   education: ResumeEducation[]
 };
-
-export async function fetchRemoteResume(): Promise<Resume> {
-  const url = new URL(RESUME_URL);
-  url.searchParams.set('t', Date.now().toString());
-
-  const response = await fetch(url.toString(), {
-    cache: 'no-store',
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to load resume: ${response.status}`);
-  }
-
-  return await response.json() as Resume;
-}

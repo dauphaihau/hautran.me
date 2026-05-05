@@ -1,38 +1,27 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import type { Resume, ResumeProject } from '../../data/resume.ts';
-import Accomplish from './accomplish.vue';
-import ProjectSection from './project-section.vue';
-import RangeDate from './range-date.vue';
+import type { Resume } from '~/shared/api/resume/dto.ts';
+import Accomplish from '~/shared/components/background/accomplish.vue';
+import RangeDate from '~/shared/components/background/range-date.vue';
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   resume: Resume
-}>();
-
-function getVisibleProjects(projects?: ResumeProject[] | null): ResumeProject[] {
-  return (projects ?? []).filter(project => project.visible !== false);
-}
-
-const experimentalApps = computed<ResumeProject[]>(() => getVisibleProjects(props.resume.projects.experimentalApps));
-const devTools = computed<ResumeProject[]>(() => getVisibleProjects(props.resume.projects.devTools));
-const hasProjects = computed<boolean>(() => experimentalApps.value.length > 0 || devTools.value.length > 0);
+  showWork?: boolean
+  showKnowledge?: boolean
+  showEducation?: boolean
+}>(), {
+  showWork: true,
+  showKnowledge: true,
+  showEducation: true,
+});
 </script>
 
 <template>
   <section>
     <div class="space-y-12 card">
-      <div class="wrapper">
-        <h4 class="title">
-          About
-        </h4>
-        <div class="content">
-          <p class="">
-            {{ resume.basics.summary }}
-          </p>
-        </div>
-      </div>
-
-      <div class="wrapper">
+      <div
+        v-if="showWork"
+        class="wrapper"
+      >
         <h4 class="title">
           Work Experience
         </h4>
@@ -70,27 +59,9 @@ const hasProjects = computed<boolean>(() => experimentalApps.value.length > 0 ||
       </div>
 
       <div
-        v-if="hasProjects"
+        v-if="showKnowledge"
         class="wrapper"
       >
-        <h4 class="title">
-          Projects
-        </h4>
-        <div class="content space-y-12">
-          <ProjectSection
-            v-if="experimentalApps.length > 0"
-            label="Experimental Apps"
-            :projects="experimentalApps"
-          />
-          <ProjectSection
-            v-if="devTools.length > 0"
-            label="Dev Tools"
-            :projects="devTools"
-          />
-        </div>
-      </div>
-
-      <div class="wrapper">
         <h4 class="title">
           Knowledge
         </h4>
@@ -114,7 +85,10 @@ const hasProjects = computed<boolean>(() => experimentalApps.value.length > 0 ||
         </div>
       </div>
 
-      <div class="wrapper">
+      <div
+        v-if="showEducation"
+        class="wrapper"
+      >
         <h4 class="title">
           Education
         </h4>
@@ -148,7 +122,7 @@ const hasProjects = computed<boolean>(() => experimentalApps.value.length > 0 ||
 </template>
 
 <style scoped>
-@reference "../../index.css";
+@reference "../../../app/styles/index.css";
 
 .wrapper {
   @apply text-left space-y-4;

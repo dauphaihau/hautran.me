@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ResumeProject } from '../../data/resume.ts';
+import type { ResumeProject } from '~/shared/api/resume/dto.ts';
 import ProjectCard from './project-card.vue';
 
 defineProps<{
@@ -24,7 +24,7 @@ defineProps<{
 </template>
 
 <style scoped>
-@reference "../../index.css";
+@reference "../../../app/styles/index.css";
 
 .section-label {
   @apply text-sm font-semibold uppercase tracking-[0.12em] text-primary-light;

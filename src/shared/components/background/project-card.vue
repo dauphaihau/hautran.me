@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import type { ResumeProject } from '../../data/resume.ts';
-import { toIcon } from '../../utils/to-icon.ts';
+import type { ResumeProject } from '~/shared/api/resume/dto.ts';
+import { toIcon } from '~/shared/utils/to-icon.ts';
 
 defineProps<{ project: ResumeProject }>();
 </script>
@@ -76,7 +76,7 @@ defineProps<{ project: ResumeProject }>();
 </template>
 
 <style scoped>
-@reference "../../index.css";
+@reference "../../../app/styles/index.css";
 
 .primary-label {
   @apply font-bold text-primary-deeper;
