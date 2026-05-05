@@ -37,7 +37,7 @@ withDefaults(defineProps<{
                   class="text-primary-deeper font-bold"
                   target="_blank"
                 >
-                  {{ item.company }}
+                  <span>{{ item.company }}</span>
                 </a>
                 <RangeDate
                   :start-date="item.startDate"
