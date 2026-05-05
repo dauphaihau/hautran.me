@@ -77,6 +77,10 @@ export function runScrambleAnimation(): void {
   const profileEls = els.filter(el => profileSection?.contains(el));
   const backgroundEls = els.filter(el => !profileSection?.contains(el));
 
+  // Hide fade-only elements (no text, e.g. decorative dividers) until the intro plays.
+  const fadeEls = Array.from(document.querySelectorAll<HTMLElement>('[data-scramble-fade]'));
+  fadeEls.forEach(el => { el.style.opacity = '0'; });
+
   // Both timelines share the same cleanup; run it only after the last one finishes.
   let doneCount = 0;
   const cleanup = (): void => {
@@ -86,6 +90,7 @@ export function runScrambleAnimation(): void {
       htmlElement.style.height = '';
       if (metrics[i].hasBg) htmlElement.style.opacity = '';
     });
+    animate(fadeEls, { opacity: 1, duration: 400 });
   };
 
   const buildTimeline = (groupEls: Element[]): ReturnType<typeof createTimeline> => {
@@ -119,6 +124,29 @@ export function runScrambleAnimation(): void {
   buildTimeline(profileEls).init();
   buildTimeline(backgroundEls).init();
 
+  attachScrambleHover(els);
+}
+
+function collectLeafEls(): Element[] {
+  const els: Element[] = [];
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_ELEMENT,
+    {
+      acceptNode(node) {
+        const el = node as Element;
+        if (el instanceof SVGElement) return NodeFilter.FILTER_SKIP;
+        if (el.children.length === 0 && el.textContent?.trim()) return NodeFilter.FILTER_ACCEPT;
+        return NodeFilter.FILTER_SKIP;
+      },
+    }
+  );
+  let node;
+  while ((node = walker.nextNode())) els.push(node as Element);
+  return els;
+}
+
+export function attachScrambleHover(els: Element[] = collectLeafEls()): void {
   els.forEach(el => {
     const replay = (): void => {
       const htmlElement = el as HTMLElement;

@@ -12,7 +12,7 @@ defineProps<{
 
 <template>
   <footer class="footer">
-    <div class="footer-divider" />
+    <div class="footer-divider" data-scramble-fade />
     <div class="footer-content">
       <div class="footer-links">
         <a

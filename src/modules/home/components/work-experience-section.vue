@@ -33,7 +33,7 @@ const workItems = computed(() => props.items.map(item => ({
             v-if="item.summary"
             class="work-summary"
           >
-            {{ item.summary }}
+            <span class="work-dash">—</span><span>{{ item.summary }}</span>
           </span>
         </div>
         <div class="work-date">
@@ -77,9 +77,8 @@ const workItems = computed(() => props.items.map(item => ({
   @apply ml-3 text-primary-light;
 }
 
-.work-summary::before {
-  content: "\2014";
-  @apply mr-3 text-primary-light;
+.work-dash {
+  @apply mr-3;
 }
 
 .work-date {

@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { nextTick, onMounted, provide, ref } from 'vue';
-import { RouterView } from 'vue-router';
+import { RouterView, useRouter } from 'vue-router';
 import Header from '~/shared/components/header.vue';
 import Footer from '~/shared/components/footer.vue';
-import { runScrambleAnimation } from '~/shared/composables/use-scramble-animation.ts';
+import { attachScrambleHover, runScrambleAnimation } from '~/shared/composables/use-scramble-animation.ts';
 import { resumeApi } from '~/shared/api/resume/resume.api.ts';
 import type { Resume } from '~/shared/api/resume/dto.ts';
 
 const resume = ref<Resume | null>(null);
 const loadError = ref<unknown>(null);
 provide('resume', resume);
+
+const router = useRouter();
 
 onMounted(async () => {
   try {
@@ -23,6 +25,11 @@ onMounted(async () => {
 
   await nextTick();
   runScrambleAnimation();
+
+  router.afterEach(async () => {
+    await nextTick();
+    attachScrambleHover();
+  });
 });
 </script>
 

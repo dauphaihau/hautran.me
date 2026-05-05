@@ -11,7 +11,7 @@ defineProps<{
     <div class="">
       {{ startDate }}
     </div>
-    -
+    <span>-</span>
     <div class="">
       {{ endDate }}
     </div>

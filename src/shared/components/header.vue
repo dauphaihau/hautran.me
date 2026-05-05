@@ -12,6 +12,7 @@ const links = [
 
 <template>
   <header class="site-header">
+    <div class="header-border" data-scramble-fade />
     <div class="nav">
       <RouterLink
         to="/"
@@ -40,7 +41,11 @@ const links = [
 @reference "../../app/styles/index.css";
 
 .site-header {
-  @apply sticky top-0 z-10 border-b border-black/10 bg-white/85 backdrop-blur dark:border-white/10 dark:bg-black/70;
+  @apply sticky top-0 z-10 bg-white/85 backdrop-blur dark:bg-black/70;
+}
+
+.header-border {
+  @apply absolute bottom-0 left-0 right-0 border-b border-black/10 dark:border-white/10;
 }
 
 .nav {
