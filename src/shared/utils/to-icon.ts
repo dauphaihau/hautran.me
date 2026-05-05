@@ -8,6 +8,7 @@ const icons = {
   app: 'ic:twotone-phone-iphone',
   dot: 'carbon:dot-mark',
   whiteDot: 'ph:dot-outline-thin',
+  email: 'lucide:mail',
 };
 
 export type IconKey = keyof typeof icons;
