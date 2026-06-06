@@ -33,7 +33,7 @@ const workItems = computed(() => props.items.map(item => ({
             v-if="item.summary"
             class="work-summary"
           >
-            <span class="work-dash">—</span><span>{{ item.summary }}</span>
+            <span class="work-dash">-</span><span>{{ item.summary }}</span>
           </span>
         </div>
         <div class="work-date">
@@ -45,7 +45,7 @@ const workItems = computed(() => props.items.map(item => ({
 </template>
 
 <style scoped>
-@reference "../../../app/styles/index.css";
+@reference "../../../styles/index.css";
 
 .wrapper {
   @apply text-left space-y-4;

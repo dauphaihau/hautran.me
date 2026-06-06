@@ -51,7 +51,7 @@ function getProjectUrl(project: ResumeProject): string {
 </template>
 
 <style scoped>
-@reference "../../../app/styles/index.css";
+@reference "../../../styles/index.css";
 
 .featured-projects {
   @apply space-y-6;

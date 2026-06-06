@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import ResumeHeader from '~/shared/components/resume-header.vue';
-import type { Resume, ResumeProject } from '~/shared/api/resume/dto.ts';
-import FeaturedProjectsSection from './featured-projects-section.vue';
-import WorkExperienceSection from './work-experience-section.vue';
+import { useResume } from '~/shared/composables/use-resume.ts';
+import ResumeHeader from '~/app/pages/home/_components/resume-header.vue';
+import type { ResumeProject } from '~/shared/api/resume/dto.ts';
+import FeaturedProjectsSection from './_components/featured-projects-section.vue';
+import WorkExperienceSection from './_components/work-experience-section.vue';
 
-const props = defineProps<{
-  resume: Resume
-}>();
+const resume = useResume();
 
 function getVisibleProjects(projects?: ResumeProject[] | null): ResumeProject[] {
   return (projects ?? []).filter(project => project.visible !== false);
 }
 
 const allProjects = computed<ResumeProject[]>(() => [
-  ...getVisibleProjects(props.resume.projects.experimentalApps),
-  ...getVisibleProjects(props.resume.projects.devTools),
+  ...getVisibleProjects(resume.value.projects?.experimentalApps),
+  ...getVisibleProjects(resume.value.projects?.devTools),
 ]);
 </script>
 
@@ -40,19 +39,9 @@ const allProjects = computed<ResumeProject[]>(() => [
 </template>
 
 <style scoped>
-@reference "../../../app/styles/index.css";
+@reference "../../styles/index.css";
 
 .wrapper {
   @apply text-left space-y-4;
-}
-
-.title {
-  @apply bg-black dark:bg-white
-  pl-1 pr-3.5 w-fit
-  text-white dark:text-black font-bold;
-}
-
-.section-content {
-  @apply w768:pl-5;
 }
 </style>

@@ -24,7 +24,7 @@ defineProps<{
 </template>
 
 <style scoped>
-@reference "../../../app/styles/index.css";
+@reference "../../../styles/index.css";
 
 .section-label {
   @apply text-sm font-semibold uppercase tracking-[0.12em] text-primary-light;

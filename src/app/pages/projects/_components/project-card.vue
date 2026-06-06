@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import type { ResumeProject } from '~/shared/api/resume/dto.ts';
-import { toIcon } from '~/shared/utils/to-icon.ts';
+import AppIcon from '~/shared/components/app-icon/index.vue';
 
 defineProps<{ project: ResumeProject }>();
 </script>
@@ -18,39 +17,34 @@ defineProps<{ project: ResumeProject }>();
           :href="project.webAppUrl"
           target="_blank"
         >
-          <Icon
-            :icon="toIcon('website')"
-            class="size-4"
-          />
+          <AppIcon name="website" />
         </a>
         <a
           v-else-if="project.mobileAppUrl"
           :href="project.mobileAppUrl"
           target="_blank"
         >
-          <Icon
-            :icon="toIcon('app')"
-            class="size-4"
-          />
+          <AppIcon name="app" />
+        </a>
+        <a
+          v-if="project.apiUrl"
+          :href="project.apiUrl"
+          target="_blank"
+        >
+          <AppIcon name="api" />
         </a>
         <a
           :href="project.sourceUrl"
           target="_blank"
         >
-          <Icon
-            :icon="toIcon('gitHub')"
-            class="size-4"
-          />
+          <AppIcon name="gitHub" />
         </a>
         <a
           v-if="project.npmUrl"
           :href="project.npmUrl"
           target="_blank"
         >
-          <Icon
-            :icon="toIcon('npm')"
-            class="size-4"
-          />
+          <AppIcon name="npm" />
         </a>
       </div>
     </div>
@@ -64,10 +58,9 @@ defineProps<{ project: ResumeProject }>();
       >
         <div class="flex items-center gap-1.5">
           <span>{{ tech }}</span>
-          <Icon
+          <AppIcon
             v-if="project.mainTechnologies[techIdx + 1]"
-            :icon="toIcon('dot')"
-            class="size-2"
+            name="dot"
           />
         </div>
       </div>
@@ -76,7 +69,7 @@ defineProps<{ project: ResumeProject }>();
 </template>
 
 <style scoped>
-@reference "../../../app/styles/index.css";
+@reference "../../../styles/index.css";
 
 .primary-label {
   @apply font-bold text-primary-deeper;

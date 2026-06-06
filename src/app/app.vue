@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { nextTick, onMounted, provide, ref } from 'vue';
 import { RouterView, useRouter } from 'vue-router';
-import Header from '~/shared/components/header.vue';
-import Footer from '~/shared/components/footer.vue';
+import Header from '~/app/layouts/default/header.vue';
+import Footer from '~/app/layouts/default/footer.vue';
 import { attachScrambleHover, runScrambleAnimation } from '~/shared/composables/use-scramble-animation.ts';
 import { resumeApi } from '~/shared/api/resume/resume.api.ts';
 import type { Resume } from '~/shared/api/resume/dto.ts';

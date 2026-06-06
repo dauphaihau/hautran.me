@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router';
-import ThemeButton from './theme-button.vue';
+import ThemeButton from '../../../shared/components/theme-button.vue';
 
 defineOptions({ name: 'SiteHeader' });
 
@@ -48,7 +48,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
 </template>
 
 <style scoped>
-@reference "../../app/styles/index.css";
+@reference "../../styles/index.css";
 
 .site-header {
   @apply sticky top-0 z-10;

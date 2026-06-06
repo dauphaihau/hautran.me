@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { toIcon } from '~/shared/utils/to-icon.ts';
-import { Icon } from '@iconify/vue';
+import AppIcon from '~/shared/components/app-icon/index.vue';
 
 defineProps<{
   text: string
@@ -10,10 +9,7 @@ defineProps<{
 <template>
   <div class="flex items-center w768:ml-3 gap-1.5">
     <div>
-      <Icon
-        :icon="toIcon('whiteDot')"
-        class="size-7"
-      />
+      <AppIcon name="whiteDot" />
     </div>
     <p> {{ text }}</p>
   </div>

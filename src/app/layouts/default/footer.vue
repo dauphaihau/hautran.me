@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
+import { computed } from 'vue';
 import type { Resume } from '~/shared/api/resume/dto.ts';
-import { toIcon, type IconKey } from '~/shared/utils/to-icon.ts';
+import AppIcon from '~/shared/components/app-icon/index.vue';
+import { toIconKey } from '~/shared/components/app-icon/icon-registry.ts';
 
 defineOptions({ name: 'SiteFooter' });
 
-defineProps<{
+const props = defineProps<{
   resume: Resume
 }>();
+
+const profileItems = computed(() =>
+  props.resume.basics.profiles.flatMap((item) => {
+    const iconKey = toIconKey(item.network);
+
+    return iconKey ? [{ ...item, iconKey }] : [];
+  })
+);
 </script>
 
 <template>
@@ -16,27 +25,27 @@ defineProps<{
     <div class="footer-content">
       <div class="footer-links">
         <a
-          v-for="item in resume.basics.profiles"
+          v-for="item in profileItems"
           :key="item.url"
           :href="item.url"
           target="_blank"
           class="text-primary-light"
         >
-          <Icon
-            :icon="toIcon(item.network as IconKey)"
-            class="size-5"
+          <AppIcon
+            :name="item.iconKey"
+            size="lg"
           />
         </a>
       </div>
       <div>
-        © {{ new Date().getFullYear() }} {{ resume.basics.name }}
+        © {{ new Date().getFullYear() }} {{ props.resume.basics.name }}
       </div>
     </div>
   </footer>
 </template>
 
 <style scoped>
-@reference "../../app/styles/index.css";
+@reference "../../styles/index.css";
 
 .footer {
   @apply pb-4;

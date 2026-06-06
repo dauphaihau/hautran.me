@@ -20,6 +20,7 @@ export type ResumeProject = {
   sourceUrl: string
   featured?: boolean
   visible?: boolean
+  apiUrl?: string
   npmUrl?: string
   webAppUrl?: string
   mobileAppUrl?: string
