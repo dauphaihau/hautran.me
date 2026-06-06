@@ -7,7 +7,7 @@ defineProps<{ project: ResumeProject }>();
 
 <template>
   <div class="space-y-1">
-    <div class="flex items-center gap-3">
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
       <h3 class="primary-label">
         {{ project.name }}
       </h3>
