@@ -38,7 +38,7 @@ const devTools = computed<ResumeProject[]>(() => getVisibleProjects(resume.value
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="postcss">
 @reference "../../styles/index.css";
 
 .wrapper {
@@ -49,9 +49,5 @@ const devTools = computed<ResumeProject[]>(() => getVisibleProjects(resume.value
   @apply bg-black dark:bg-white
   pl-1 pr-3.5 w-fit
   text-white dark:text-black font-bold;
-}
-
-.content {
-  @apply w768:pl-5;
 }
 </style>

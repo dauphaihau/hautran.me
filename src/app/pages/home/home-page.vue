@@ -38,7 +38,7 @@ const allProjects = computed<ResumeProject[]>(() => [
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="postcss">
 @reference "../../styles/index.css";
 
 .wrapper {
