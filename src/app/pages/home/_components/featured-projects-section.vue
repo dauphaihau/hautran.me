@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
+import ContentSection from '~/app/components/content-section.vue';
 import type { ResumeProject } from '~/shared/api/resume/dto.ts';
 
 const props = defineProps<{
@@ -15,21 +16,18 @@ function getProjectUrl(project: ResumeProject): string {
 </script>
 
 <template>
-  <div
+  <ContentSection
     v-if="featuredProjects.length > 0"
-    class="featured-projects"
+    title="Featured Projects"
   >
-    <div class="heading-row">
-      <h4 class="heading">
-        Featured Projects
-      </h4>
+    <template #action>
       <RouterLink
         to="/projects"
         class="see-more"
       >
         See more
       </RouterLink>
-    </div>
+    </template>
 
     <div class="project-grid">
       <a
@@ -47,32 +45,18 @@ function getProjectUrl(project: ResumeProject): string {
         </p>
       </a>
     </div>
-  </div>
+  </ContentSection>
 </template>
 
 <style scoped>
 @reference "../../../styles/index.css";
-
-.featured-projects {
-  @apply space-y-6;
-}
-
-.heading-row {
-  @apply flex items-center justify-between gap-4;
-}
-
-.heading {
-  @apply bg-black dark:bg-white
-  pl-1 pr-3.5 w-fit
-  text-white dark:text-black font-bold;
-}
 
 .see-more {
   @apply no-underline text-sm font-medium text-primary-light transition-colors hover:text-primary-deeper;
 }
 
 .project-grid {
-  @apply grid grid-cols-1 gap-y-4 w768:pl-6;
+  @apply grid grid-cols-1 gap-y-4;
 }
 
 .project-card {

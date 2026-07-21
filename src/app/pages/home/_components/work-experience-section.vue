@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import ContentSection from '~/app/components/content-section.vue';
 import type { ResumeWork } from '~/shared/api/resume/dto.ts';
 
 const props = defineProps<{
@@ -14,11 +15,7 @@ const workItems = computed(() => props.items.map(item => ({
 </script>
 
 <template>
-  <div class="wrapper">
-    <h4 class="title">
-      Work Experience
-    </h4>
-
+  <ContentSection title="Work Experience">
     <div class="work-list">
       <a
         v-for="item in workItems"
@@ -41,25 +38,11 @@ const workItems = computed(() => props.items.map(item => ({
         </div>
       </a>
     </div>
-  </div>
+  </ContentSection>
 </template>
 
 <style scoped>
 @reference "../../../styles/index.css";
-
-.wrapper {
-  @apply text-left space-y-4;
-}
-
-.title {
-  @apply bg-black dark:bg-white
-  pl-1 pr-3.5 w-fit
-  text-white dark:text-black font-bold;
-}
-
-.work-list {
-  @apply w768:pl-5;
-}
 
 .work-row {
   @apply flex flex-col gap-0.5 no-underline text-sm
